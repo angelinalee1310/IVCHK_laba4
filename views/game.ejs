@@ -1,0 +1,71 @@
+<!DOCTYPE html> <!-- Объявление формата документа -->
+<html>
+    <head> <!-- Техническая информация о документе -->
+        <meta charset="UTF-8"> <!-- Определяем кодировку символов документа -->
+        <title></title> <!-- Задаем заголовок документа -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            .content{
+                padding: 10px 110px ;
+            }
+            .square {
+                height: 100px;
+                width: 100px;
+                background-color: #555;
+            }
+            .btn{
+                margin-bottom: 20px;
+            }
+            .box{
+                background-color:#D94Ad0;
+                width: 250px;
+                height: 100px;
+                padding: 40px;"
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('nav'); -%>  
+        <div class="content">
+            <p>Нажмите кнопку для отображения даты.</p>
+            <button class="btn btn-dark"" onclick="displayDate()">Время</button>
+            <p id="demo"></p>
+        </div>
+        <hr>
+        <div class="content">
+            Введите свое имя: <input class="form-group" type="text" id="fname" onchange="myFunction()">
+            <p>Когда вы выходите из поля ввода, запускается функция, которая преобразует входной текст в верхний регистр.</p>
+        </div>
+        <hr>
+        <div class="content">
+            <div class='box' onmousedown="mDown(this)" onmouseup="mUp(this)">Кликнуть</div>
+        </div>
+        <hr>
+        <div class="content">
+            <p>
+                <div onMouseOver="style.backgroundColor='black'" onMouseOut="style.backgroundColor='green'" class="square"></div>
+            </p>
+        </div>
+        <hr>
+        <div class="content">
+            Введите свое имя: <input class="form-group" type="text" onfocus="style.background = '#1ec5e5'" onblur="style.background = '#1233ff'">
+        </div>
+        <script>
+            function displayDate() {
+                document.getElementById("demo").innerHTML = Date();
+            }
+            function myFunction() {
+                var x = document.getElementById("fname");
+                x.value = x.value.toUpperCase();
+            }
+            function mDown(obj) {
+                obj.style.backgroundColor = "#1ec5e5";
+                obj.innerHTML = "Отпусти меня! (TT) ";
+            }
+            function mUp(obj) {
+                obj.style.backgroundColor="#1233ff";
+                obj.innerHTML="Спасибо :D";
+            }
+        </script>
+    </body>
+</html>

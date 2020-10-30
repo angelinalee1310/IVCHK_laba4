@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesponse from server</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        .cart{
+            margin: 50px 100px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('nav'); -%>
+    <div class="cart">
+        <h3>Ваша анкета</h3>
+        <div class="content alert alert-secondary" id="changePassword" width="100px">Имя: <%= qs.name %></div>
+        <div class="content alert alert-secondary" id="changePassword" width="100px">Фамилия: <%= qs.lastName %></div>
+        <div class="content alert alert-secondary" id="changePassword" width="100px">Описание: <%= qs.textarea %></div>
+        <div class="content alert alert-secondary" id="changePassword" width="100px">Возраст: <%= qs.age %></div>
+        <div class="content alert alert-secondary" id="changePassword" width="100px">Пол: <%= qs.gender %></div>
+    </div>
+</body>
+</html>
